@@ -2,16 +2,19 @@
 library(deSolve)
 
 #predator prey L-V
+#this code means that each plot window will fit two plots
 
-par(mfrow=c(1,2)) #this code means that each plot window will fit two plots
+par(mfrow=c(1,2)) 
 
 #parameter values
 alpha <-1.1
-beta <- 0.4
-gamma <- 0.1
+beta <- 0.6
+gamma <- 0.7
 delta <- 0.4
 
-yini <- c(X = 10, Y = 10) #these are the initial population sizes, i.e., both predators and prey start with 10 individuals
+#these are the initial population sizes, 
+#i.e., both predators and prey start with 10 individuals
+yini <- c(X = 10, Y = 10) 
 
 #this code constructs the model
 Lot_Vol <- function (t, y, parms) {
@@ -21,9 +24,10 @@ Lot_Vol <- function (t, y, parms) {
     list(c(dX, dY))
   }) }
 
+#this code sets the time interval population size will be sampled
 times <- seq(from = 0, 
              to = 100, 
-             by = 0.01) #this code sets the time interval population size will be sampled
+             by = 0.01) 
 out <- ode(y = yini, 
            times = times, 
            func = Lot_Vol, 
