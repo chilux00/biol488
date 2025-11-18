@@ -7,10 +7,10 @@ library(deSolve)
 par(mfrow=c(1,2)) 
 
 #parameter values
-alpha <-1.1
+alpha <-12
 beta <- 0.6
-gamma <- 0.7
-delta <- 0.4
+gamma <- 0.3
+delta <- 0.5
 
 #these are the initial population sizes, 
 #i.e., both predators and prey start with 10 individuals
